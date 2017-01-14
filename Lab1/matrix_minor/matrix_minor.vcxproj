@@ -83,22 +83,21 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Matrix.h" />
-    <ClInclude Include="MatrixAgregator.h" />
-    <ClInclude Include="ThreadedMatrixRank.h" />
+    <ClInclude Include="MatrixRankCalculator.h" />
+    <ClInclude Include="ThreadedMatrixRankCalculator.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="LinearMatrixRank.h" />
-    <ClInclude Include="TestMatrixData.h" />
+    <ClInclude Include="LinearMatrixRankCalculator.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Matrix.cpp" />
-    <ClCompile Include="ThreadedMatrixRank.cpp" />
+    <ClCompile Include="ThreadedMatrixRankCalculator.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="LinearMatrixRank.cpp" />
+    <ClCompile Include="LinearMatrixRankCalculator.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

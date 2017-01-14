@@ -1,5 +1,6 @@
 #pragma once
-#include "TestMatrixData.h"
+
+typedef std::vector<std::vector<int>> MatrixType;
 
 class CMatrix
 {
@@ -10,6 +11,7 @@ public:
 
     MatrixType & GetMatrix();
     double GetDeterminant(MatrixType & matrix);
+
 private:
     MatrixType m_matrix;
 };
