@@ -1,20 +1,21 @@
 #include "stdafx.h"
-#include "Matrix.h"
+#include "matrix.h"
+#include <iostream>
+#include <fstream>
 
+using namespace std;
 
-Matrix::Matrix(const MatrixType& matrix):
-	m_matrix(matrix)
+size_t CMatrix::GetDimension()
 {
-	m_demension = m_matrix.size();
-	m_determinant = GetDeterminant(m_matrix);
+    return m_matrix.size();
 }
 
-
-Matrix::~Matrix()
+MatrixType & CMatrix::GetMatrix()
 {
+    return m_matrix;
 }
 
-double Matrix::GetDeterminant(MatrixType& matrix)
+double CMatrix::GetDeterminant(MatrixType & matrix)
 {
 	double det = 1;
 	size_t matrixSize = matrix.size();
@@ -60,26 +61,4 @@ double Matrix::GetDeterminant(MatrixType& matrix)
 	}
 
 	return det;
-}
-
-int Matrix::GetDemension()
-{
-	return m_demension;
-}
-
-MatrixType Matrix::GetMatrix()
-{
-	return m_matrix;
-}
-
-void Matrix::PrintMatrix(const MatrixType& matrix)
-{
-	for (size_t row = 0; row < matrix.size(); row++)
-	{
-		for (size_t column = 0; column < matrix.size(); column++)
-		{
-			cout << matrix[row][column] << "\t";
-		}
-		cout << endl;
-	}
 }

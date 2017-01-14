@@ -9,10 +9,10 @@
 
 #include <stdio.h>
 #include <tchar.h>
+
 #include <vector>
 #include <iostream>
+#include <ctime>
+#include <windows.h>
 
-typedef std::vector<std::vector<double>> MatrixType;
-
-using std::cout;
-using std::endl;
+// TODO: Установите здесь ссылки на дополнительные заголовки, требующиеся для программы
