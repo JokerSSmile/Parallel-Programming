@@ -6,21 +6,24 @@
 namespace
 {
 
-	void ShowUsage()
+	void PrintHelp()
 	{
-		std::cout << "Error!!!Usage Server.exe <Iterations count> <Process count>" << std::endl;
+		std::cout << "Usage Server.exe <iterations count> <process count>" << std::endl;
 	}
 }
 
 int main(int argc, char *argv[])
 {
-	if(argc < 3)
+	if(argc > 1 && argv[0] == "/?")
 	{
-		ShowUsage();
-		return 1;
+		PrintHelp();
+		return 0;
 	}
-	CServer server(std::atoi(argv[2]), std::atoi(argv[1]));
-	server.StartServer();
-    return 0;
+	if (argc == 3)
+	{
+		CServer server(std::atoi(argv[2]), std::atoi(argv[1]));
+		server.StartServer();
+		return 0;
+	}
 }
 
