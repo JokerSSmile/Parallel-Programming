@@ -1,11 +1,8 @@
-// Server.cpp: определяет точку входа для консольного приложения.
-//
-
 #include "stdafx.h"
 #include "Server.h"
+
 namespace
 {
-
 	void PrintHelp()
 	{
 		std::cout << "Usage Server.exe <iterations count> <process count>" << std::endl;
