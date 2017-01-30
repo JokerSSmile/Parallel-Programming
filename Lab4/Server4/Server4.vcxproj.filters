@@ -27,7 +27,7 @@
     <ClInclude Include="Server.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="..\Client4\Client.h">
+    <ClInclude Include="..\Client4\PipeHelper.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
   </ItemGroup>
@@ -41,7 +41,7 @@
     <ClCompile Include="Server.cpp">
       <Filter>Заголовочные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\Client4\Client.cpp">
+    <ClCompile Include="..\Client4\PipeHelper.cpp">
       <Filter>Заголовочные файлы</Filter>
     </ClCompile>
   </ItemGroup>

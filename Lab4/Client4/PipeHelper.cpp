@@ -1,11 +1,12 @@
 #include "stdafx.h"
-#include "Client.h"
+#include "PipeHelper.h"
 #include <windows.h>
 #include <stdio.h>
 
 void CClient::Wait(std::vector<std::string>& messages, size_t messageCount, const std::string& pipeName)
 {
-	std::wstring wStrName(pipeName.begin(), pipeName.end());
+	std::string pName = "\\\\." + pipeName;
+	std::wstring wStrName(pName.begin(), pName.end());
 	HANDLE hPipe = CreateNamedPipe(wStrName.data(),					//lpName
 		PIPE_ACCESS_DUPLEX | FILE_FLAG_WRITE_THROUGH,				//dwOpenMode
 		PIPE_TYPE_MESSAGE | PIPE_READMODE_MESSAGE | PIPE_WAIT,		//dwPipeMode
@@ -18,7 +19,6 @@ void CClient::Wait(std::vector<std::string>& messages, size_t messageCount, cons
 	if (hPipe == INVALID_HANDLE_VALUE)
 	{
 		std::cout << "Failed to create pipe" << std::endl;
-		//std::cout << GetLastError() << std::endl;
 		throw std::exception();
 	}
 
@@ -49,8 +49,9 @@ void CClient::Wait(std::vector<std::string>& messages, size_t messageCount, cons
 
 void CClient::Send(const std::string& message, const std::string& pipeName)
 {
+	std::string pName = "\\\\127.0.0.1" + pipeName;
 	HANDLE hPipe;
-	std::wstring wName(pipeName.begin(), pipeName.end());
+	std::wstring wName(pName.begin(), pName.end());
 
 	do
 	{
